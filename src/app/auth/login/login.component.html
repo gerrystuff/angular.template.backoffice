@@ -1,0 +1,32 @@
+<div class="d-flex justify-content-center align-items-center main-container">
+    <div class="d-flex justify-content-center align-items-center login-container">
+        <form autocomplete="off" [formGroup]="loginForm" class="d-flex align-items-center flex-column login-form">
+
+
+            <img src="assets/user.png" alt="" />
+
+            <mat-form-field class="input" appearance="fill">
+                <mat-label>Correo Electrónico</mat-label>
+                <input autocomplete="off" matInput formControlName="email" placeholder="correo@escoserra.com" required>
+                <mat-error *ngIf="!isValidEmail()">{{invalidEmailMessage()}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="input" appearance="fill">
+                <mat-label>Contraseña</mat-label>
+                <input autocomplete="off" matInput [type]="hide ? 'password' : 'text'" placeholder="*****" formControlName="password" required>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-hint align="start">Minimo 6 carácteres</mat-hint>
+
+                <mat-hint align="end">{{this.loginForm.value.password.length || 0}}/15</mat-hint>
+            </mat-form-field>
+
+            <mat-checkbox formControlName="remember" class="remember-me">Recuerdame</mat-checkbox>
+
+            <button (click)="login()" [disabled]="!isValidPassword() || !isValidEmail()" class="btn btn-primary submitLog">
+                Ingresar
+            </button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="main-container ">
+    <h5>Empleado nuevo</h5>
+    <form class="d-flex flex-column justify-content-center align-items-center" id="estaciones-form" autocomplete="off" [formGroup]="empleadoForm">
+
+        <div class="d-flex flex-row">
+            <mat-form-field class="input" appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="" formControlName="nombre" required>
+            </mat-form-field>
+
+        </div>
+
+        <div class="d-flex flex-row">
+            <mat-form-field class="input" appearance="fill">
+                <mat-label>Correo</mat-label>
+                <input autocomplete="off" matInput placeholder="correo@escoserra.com" formControlName="correo" required>
+            </mat-form-field>
+
+            <mat-form-field class="input telefono" appearance="fill">
+                <mat-label>Telefono</mat-label>
+                <input type="number" matInput #input formControlName="telefono" maxlength="10" required>
+                <mat-hint align="start">{{input.value?.length || 0}}/10</mat-hint>
+            </mat-form-field>
+
+
+        </div>
+
+
+
+
+
+
+        <button (click)="add()" [class]="isValidFormClass()" [disabled]="!isValidform()" class="form-control btn btn-primary"> Guardar </button>
+
+    </form>
+</div>

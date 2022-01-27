@@ -1,0 +1,15 @@
+<div class="main-container ">
+    <h5>Producto a actualizar</h5>
+    <form class="d-flex flex-column justify-content-center align-items-center" autocomplete="off" [formGroup]="productoForm" (ngSubmit)="edit()">
+
+        <div class="d-flex flex-row">
+            <mat-form-field class="input" appearance="fill">
+                <mat-label>Titulo</mat-label>
+                <input matInput placeholder="" formControlName="title" required>
+            </mat-form-field>
+        </div>
+
+        <button type="submit" [disabled]="!isValidform()" [class]="isValidFormClass()" class="form-control btn btn-primary"> Guardar </button>
+
+    </form>
+</div>

@@ -1,0 +1,30 @@
+.main-container {
+    height: 100%;
+    form {
+        .btn {
+            margin-top: 15px;
+        }
+        .disabled {
+            border: grey;
+            background-color: grey;
+        }
+        .input {
+            width: 100%;
+            margin: 5px;
+        }
+        .flex-row {
+            width: 100%;
+            // .select {
+            //     margin-left: 4.5px;
+            //     margin-right: 4.5px;
+            // }
+            // .permiso {
+            //     margin-left: 4.5px;
+            //     margin-right: 1.4rem;
+            // }
+            // .custom-file {
+            //     margin-right: 4.5px;
+            // }
+        }
+    }
+}

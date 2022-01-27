@@ -1,0 +1,64 @@
+<app-module-header [title]="getTitle()"></app-module-header>
+
+<div class="catalogo-container">
+    <div class="catalogo-card">
+
+        <app-catalogo-header [service]="getService()" [selected]="getSelected()" [addComponent]="addComponent" [editComponent]="editEmpleado">
+        </app-catalogo-header>
+
+        <div class="catalogo-body custom-scroll">
+            <table mat-table [dataSource]="empleados" class="mat-elevation-z8">
+
+                <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef> Status </th>
+                    <td mat-cell class="status-container" *matCellDef="let empleado">
+                        <div [class]="getStatusClass(empleado.status)">
+                        </div>
+                    </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="nombre">
+                    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                    <td mat-cell *matCellDef="let empleado"> {{empleado.nombre }} </td>
+                </ng-container>
+
+                <!-- 
+
+                <ng-container matColumnDef="correo">
+                    <th mat-header-cell *matHeaderCellDef> Correo </th>
+                    <td mat-cell *matCellDef="let empleado"> {{empleado.correo || ''}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="telefono">
+                    <th mat-header-cell *matHeaderCellDef> Telefóno </th>
+                    <td mat-cell *matCellDef="let empleado"> {{empleado.telefono}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="fecha_nacimiento">
+                    <th mat-header-cell *matHeaderCellDef> Fecha Nacimiento </th>
+                    <td mat-cell *matCellDef="let empleado"> {{empleado.fecha_nacimiento | date}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="estado">
+                    <th mat-header-cell *matHeaderCellDef> Estado </th>
+                    <td mat-cell *matCellDef="let empleado"> {{empleado.estado.nombre}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="ciudad">
+                    <th mat-header-cell *matHeaderCellDef> Ciudad </th>
+                    <td mat-cell *matCellDef="let empleado"> {{empleado.ciudad.nombre.toUpperCase()}} </td>
+                </ng-container> -->
+
+
+                <tr mat-header-row *matHeaderRowDef="columns; sticky:true"></tr>
+                <tr mat-row (click)="setSelected(row)" [class]="getSelectedClass(row)" *matRowDef="let row; columns: columns;"></tr>
+
+            </table>
+        </div>
+    </div>
+</div>

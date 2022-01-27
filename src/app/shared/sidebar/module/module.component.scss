@@ -1,0 +1,87 @@
+$expandSpeed: 0.2s;
+$modulesSpeed: 0.2s;
+.module-container {
+    margin-bottom: 2px;
+    box-sizing: content-box;
+    cursor: pointer;
+    * {
+        user-select: none;
+    }
+    .activeModule {
+        color: #1e61a3;
+    }
+}
+
+.module {
+    display: flex;
+    margin-bottom: 10px;
+    transition: 0.1s all ease-in;
+    .module-icon {
+        margin-right: 10%;
+    }
+    .module-name {
+        margin-top: 1px;
+    }
+    .module-expand {
+        margin-top: 1px;
+        transform: rotate(180deg);
+        margin-left: auto;
+        -ms-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        -moz-transition: all $expandSpeed linear;
+        -webkit-transition: all $expandSpeed linear;
+        transition: all $expandSpeed linear;
+        cursor: pointer;
+    }
+    .module-close {
+        margin-top: 1px;
+        margin-left: auto;
+        -moz-transition: all $expandSpeed linear;
+        -webkit-transition: all $expandSpeed linear;
+        transition: all $expandSpeed linear;
+        cursor: pointer;
+    }
+}
+
+.subModulesOff {
+    margin-left: 30%;
+    max-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow: hidden;
+    -webkit-transition: height $modulesSpeed $modulesSpeed, opacity 600ms 0ms;
+    -moz-transition: height $modulesSpeed $modulesSpeed, opacity 600ms 0ms;
+    -ms-transition: height $modulesSpeed $modulesSpeed, opacity 600ms 0ms;
+    -o-transition: height $modulesSpeed $modulesSpeed, opacity 600ms 0ms;
+    transition: max-height $modulesSpeed $modulesSpeed, opacity 600ms 0ms;
+    .sub-module {
+        width: fit-content;
+        margin: 0px 0px 5px 0px;
+        &:hover {
+            color: #1e61a3;
+        }
+    }
+}
+
+.subModulesOn {
+    margin-left: 30%;
+    max-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow: hidden;
+    -webkit-transition: height $modulesSpeed $modulesSpeed, opacity 600ms 0ms;
+    -moz-transition: height $modulesSpeed $modulesSpeed, opacity 600ms 0ms;
+    -ms-transition: height $modulesSpeed $modulesSpeed, opacity 600ms 0ms;
+    -o-transition: height $modulesSpeed $modulesSpeed, opacity 600ms 0ms;
+    transition: max-height $modulesSpeed $modulesSpeed, opacity 600ms 0ms;
+    .sub-module {
+        width: fit-content;
+        margin: 0px 0px 5px 0px;
+        &:hover {
+            color: #1e61a3;
+        }
+    }
+}

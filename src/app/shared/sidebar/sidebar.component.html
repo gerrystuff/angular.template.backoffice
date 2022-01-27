@@ -1,0 +1,27 @@
+<div class="d-flex flex-column main-container">
+    <div class="
+      profile-picture
+      d-flex
+      flex-column
+      align-items-center
+      justify-content-center
+    ">
+        <img src="assets/user.png" alt="" />
+        <p>John Doe</p>
+    </div>
+
+    <div class="
+      d-flex
+      flex-column
+      p-flex-f
+      tabs
+    ">
+
+        <div class="modules-container">
+
+            <app-module *ngFor="let module of modules" [module]="module">
+            </app-module>
+        </div>
+
+    </div>
+</div>

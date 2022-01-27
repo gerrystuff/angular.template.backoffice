@@ -1,0 +1,17 @@
+<div class="main-container ">
+    <h5>Estación a actualizar</h5>
+    <form class="d-flex flex-column justify-content-center align-items-center" id="estaciones-form" autocomplete="off" [formGroup]="empleadoForm" (ngSubmit)="edit()">
+
+        <div class="d-flex flex-row">
+            <mat-form-field class="input" appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="" formControlName="nombre" required>
+            </mat-form-field>
+
+        </div>
+
+
+        <button type="submit" [disabled]="!isValidform()" [class]="isValidFormClass()" class="form-control btn btn-primary"> Guardar </button>
+
+    </form>
+</div>

@@ -1,0 +1,21 @@
+<div class="catalogo-header d-flex flex-row">
+    <div class="touch-container d-flex align-items-center">
+        <div class="touch">
+
+        </div>
+    </div>
+
+    <div class="title-container d-flex align-items-center">
+        <span>Listado de {{getTitle()}}</span>
+    </div>
+
+    <div class="op-container d-flex flex-row justify-content-end ml-auto ">
+        <!-- <mat-icon>arrow_right_alt</mat-icon> -->
+
+        <mat-icon *ngIf="selected != undefined" (click)="edit()" [class]="editClass()">edit</mat-icon>
+        <mat-icon *ngIf="selected != undefined" (click)="changeStatus()" [class]="statusClass()">{{action}}</mat-icon>
+        <mat-icon (click)="add()" class="add">add</mat-icon>
+        <mat-icon (click)="refresh()" class="refresh">autorenew</mat-icon>
+
+    </div>
+</div>

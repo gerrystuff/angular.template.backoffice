@@ -1,0 +1,22 @@
+.main-container {
+    min-height: 70px;
+    box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
+    align-items: center;
+    background: linear-gradient(135deg, hsla(0, 100%, 28%, 1) 0%, hsla(0, 100%, 41%, 1) 100%);
+    // background-color: rgb(255, 255, 255);
+    // background: linear-gradient(135deg, hsla(0, 48%, 36%, 1) 26%, hsla(0, 70%, 57%, 1) 100%);
+    // background: linear-gradient(135deg, hsla(0, 27%, 96%, 1) 0%, hsla(0, 8%, 97%, 1) 100%);
+    // background: linear-gradient(135deg, hsla(0, 15%, 80%, 1) 0%, hsla(0, 8%, 97%, 1) 100%);
+    // background: linear-gradient(135deg, hsla(0, 29%, 76%, 1) 0%, hsla(0, 8%, 97%, 1) 100%);
+    padding-right: 3rem;
+    .icon-display {
+        transform: scale(0.90);
+        color: rgba(255, 255, 255, 0.733);
+    }
+    span {
+        font-size: 16px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.932);
+        cursor: pointer;
+    }
+}

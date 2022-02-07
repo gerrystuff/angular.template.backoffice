@@ -1,22 +1,19 @@
-<div class="d-flex flex-column module-container">
-    <!-- MODULO -->
-    <div [routerLink]="module.path" (click)="expandSubModules($event)" routerLinkActive="activeModule" class="{{ module.class }}">
-        <span class="module-icon material-icons md-18">{{ module.iconClass }}</span>
-        <span class="module-name">{{ module.name }}</span>
-        <span *ngIf="!module.subModules.isEmpty" [ngClass]="isExpanded()" class="material-icons md-18"> expand_more</span>
+<!-- MODULO -->
+<div [routerLink]="module.path" (click)="expandSubModules($event)" routerLinkActive="activeModule" class="{{ module.class }}">
+    <span class="module-icon material-icons md-18">{{ module.iconClass }}</span>
+    <p class="module-name">{{ module.name }}</p>
+    <span *ngIf="!module.subModules.isEmpty" [ngClass]="isExpanded()" class="material-icons"> expand_more</span>
+</div>
+
+
+<!-- SUBMODULOS -->
+
+
+<div [ngClass]="openSubModulesStyle()">
+
+    <div [routerLink]="submodule.path" routerLinkActive="activeModule" *ngFor="let submodule of module.subModules.data" class="module sub-module">
+
+        {{submodule.name}}
+
     </div>
-
-
-    <!-- SUBMODULOS -->
-
-
-    <div [ngClass]="openSubModulesStyle()">
-
-        <div [routerLink]="submodule.path" routerLinkActive="activeModule" *ngFor="let submodule of module.subModules.data" class="sub-module">
-
-            {{submodule.name}}
-
-        </div>
-    </div>
-
 </div>

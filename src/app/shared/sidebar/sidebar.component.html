@@ -1,27 +1,23 @@
-<div class="d-flex flex-column main-container">
-    <div class="
-      profile-picture
-      d-flex
-      flex-column
-      align-items-center
-      justify-content-center
-    ">
-        <img src="assets/user.png" alt="" />
-        <p>John Doe</p>
-    </div>
+<div class="d-flex flex-column align-items-center pt-2 sidebar">
 
-    <div class="
-      d-flex
-      flex-column
-      p-flex-f
-      tabs
-    ">
 
-        <div class="modules-container">
+  <div class="siderbar-content sidebar-background"></div>
 
-            <app-module *ngFor="let module of modules" [module]="module">
-            </app-module>
-        </div>
+  <div class="sidebar-content module-container">
+      <img src="assets/images/logo.png" class="logo" alt=""/>
+      <span class="module-text logo-text"> PROGRAM APP </span>
+  </div>
 
-    </div>
+
+  <div class="sidebar-content module-container avatar-container">
+      <div class="avatar"></div>
+      <span class="module-text avatar-text"> John Doe </span>
+  </div>
+
+
+  <div class="modules">
+      <app-module *ngFor="let module of modules" [module]="module">
+      </app-module>
+  </div>
+
 </div>
